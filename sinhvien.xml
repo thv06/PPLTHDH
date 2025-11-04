@@ -1,0 +1,91 @@
+<DSSV>
+    <ThiSinh>
+        <SBD>001</SBD>
+        <HT>Tran Hanh Vy</HT>
+        <NamSinh>2006</NamSinh>
+        <Toan>8.5</Toan>
+        <Van>7.5</Van>
+        <NN>9.0</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>002</SBD>
+        <HT>Nguyen Trung Truc</HT>
+        <NamSinh>2006</NamSinh>
+        <Toan>6.0</Toan>
+        <Van>7.0</Van>
+        <NN>5.5</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>003</SBD>
+        <HT>Le Thi Hoa</HT>
+        <NamSinh>2004</NamSinh>
+        <Toan>9.5</Toan>
+        <Van>8.0</Van>
+        <NN>8.5</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>004</SBD>
+        <HT>Tran Van Nam</HT>
+        <NamSinh>2002</NamSinh>
+        <Toan>7.0</Toan>
+        <Van>6.5</Van>
+        <NN>7.0</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>005</SBD>
+        <HT>Pham Thi Thanh</HT>
+        <NamSinh>2001</NamSinh>
+        <Toan>8.0</Toan>
+        <Van>7.0</Van>
+        <NN>8.0</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>006</SBD>
+        <HT>Nguyen Van Minh</HT>
+        <NamSinh>1999</NamSinh>
+        <Toan>5.5</Toan>
+        <Van>6.0</Van>
+        <NN>6.5</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>007</SBD>
+        <HT>Hoang Thi Lan</HT>
+        <NamSinh>2000</NamSinh>
+        <Toan>9.0</Toan>
+        <Van>8.0</Van>
+        <NN>9.0</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>008</SBD>
+        <HT>Le Minh Duc</HT>
+        <NamSinh>1998</NamSinh>
+        <Toan>7.5</Toan>
+        <Van>7.0</Van>
+        <NN>8.0</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>009</SBD>
+        <HT>Doan Thi Huong</HT>
+        <NamSinh>2003</NamSinh>
+        <Toan>8.0</Toan>
+        <Van>8.5</Van>
+        <NN>9.5</NN>
+    </ThiSinh>
+
+    <ThiSinh>
+        <SBD>010</SBD>
+        <HT>Tran Quoc Bao</HT>
+        <NamSinh>2005</NamSinh>
+        <Toan>9.2</Toan>
+        <Van>7.8</Van>
+        <NN>8.9</NN>
+    </ThiSinh>
+</DSSV>

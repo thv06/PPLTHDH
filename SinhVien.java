@@ -1,138 +1,136 @@
-package InheritanceC3;
-
-import java.util.Scanner;
-
-class NguoiABC {
-    protected String hoTen;
-    protected String ngaySinh;
-    protected String gioiTinh;
-
-    // Shared Scanner để tránh Resource leak (không đóng System.in)
-    protected static final Scanner SC = new Scanner(System.in);
-
-    // Constructor mac dinh
-    public NguoiABC() {
-        this.hoTen = "Nguyen Van A";
-        this.ngaySinh = "01/01/2000";
-        this.gioiTinh = "nam";
-    }
-
-    // Constructor co tham so
-    public NguoiABC(String hoTen, String ngaySinh, String gioiTinh) {
-        this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
-        if (gioiTinh.equalsIgnoreCase("nam") || gioiTinh.equalsIgnoreCase("nu")) {
-            this.gioiTinh = gioiTinh.toLowerCase();
-        } else {
-            this.gioiTinh = "nam";
-        }
-    }
-
-    // Phuong thuc xuat
-    public void xuat() {
-        System.out.println("Ho ten: " + hoTen + ", Ngay sinh: " + ngaySinh + ", Gioi tinh: " + gioiTinh);
-    }
-}
-
-class SinhVienABC extends NguoiABC {
-    private String maSV;
-    private String heDaoTao;
-    private int tongSoTinChi;
-
-    // Constructor khong tham so
-    public SinhVienABC() {
-        super();
-        this.maSV = "SV001";
-        this.heDaoTao = "dai hoc";
-        this.tongSoTinChi = 150;
-    }
-
-    // Constructor co tham so
-    public SinhVienABC(String hoTen, String ngaySinh, String gioiTinh, String maSV, String heDaoTao) {
-        super(hoTen, ngaySinh, gioiTinh);
-        this.maSV = maSV;
-        setHeDaoTao(heDaoTao);
-    }
-
-    // Ham kiem tra va gan he dao tao
-    public void setHeDaoTao(String heDaoTao) {
-        heDaoTao = heDaoTao.toLowerCase();
-        switch (heDaoTao) {
-            case "dai hoc":
-                this.heDaoTao = "dai hoc";
-                this.tongSoTinChi = 150;
-                break;
-            case "cao dang":
-                this.heDaoTao = "cao dang";
-                this.tongSoTinChi = 100;
-                break;
-            case "cao dang nghe":
-                this.heDaoTao = "cao dang nghe";
-                this.tongSoTinChi = 130;
-                break;
-            default:
-                this.heDaoTao = "dai hoc";
-                this.tongSoTinChi = 150;
-        }
-    }
-
-    // Tinh tong hoc phi
-    public double tinhTongHocPhi() {
-        double hocPhiTinChi;
-        switch (heDaoTao) {
-            case "dai hoc":
-                hocPhiTinChi = 200000;
-                break;
-            case "cao dang":
-                hocPhiTinChi = 150000;
-                break;
-            case "cao dang nghe":
-                hocPhiTinChi = 120000;
-                break;
-            default:
-                hocPhiTinChi = 200000;
-        }
-        return tongSoTinChi * hocPhiTinChi;
-    }
-
-    // Nhap thong tin sinh vien
-    public void nhap() {
-        System.out.print("Nhap ho ten: ");
-        hoTen = SC.nextLine();
-        System.out.print("Nhap ngay sinh: ");
-        ngaySinh = SC.nextLine();
-        System.out.print("Nhap gioi tinh (nam/nu): ");
-        gioiTinh = SC.nextLine();
-        System.out.print("Nhap ma sinh vien: ");
-        maSV = SC.nextLine();
-        System.out.print("Nhap he dao tao (dai hoc / cao dang / cao dang nghe): ");
-        heDaoTao = SC.nextLine();
-        setHeDaoTao(heDaoTao);
-    }
-
-    // Xuat thong tin sinh vien
-    public void xuat() {
-        super.xuat();
-        System.out.println("Ma SV: " + maSV +
-                           ", He dao tao: " + heDaoTao +
-                           ", Tong so tin chi: " + tongSoTinChi +
-                           ", Tong hoc phi: " + tinhTongHocPhi());
-    }
-}
-
 public class SinhVien {
+    // Thuộc tính của thí sinh
+    private String soBaoDanh;
+    private String hoTen;
+    private int namSinh;
+    private double diemToan;
+    private double diemVan;
+    private double diemNgoaiNgu;
+
+    // Thuộc tính điểm chuẩn (dùng chung cho tất cả thí sinh)
+    private static double diemChuan = 25;
+
+    // ===== a) 3 phương thức khởi tạo =====
+    // 1. Khởi tạo mặc định
+    public SinhVien() {
+        this.soBaoDanh = "";
+        this.hoTen = "";
+        this.namSinh = 0;
+        this.diemToan = 0;
+        this.diemVan = 0;
+        this.diemNgoaiNgu = 0;
+    }
+
+    // 2. Khởi tạo với SBD, họ tên và năm sinh
+    public SinhVien(String soBaoDanh, String hoTen, int namSinh) {
+        this.soBaoDanh = soBaoDanh;
+        this.hoTen = hoTen;
+        this.namSinh = namSinh;
+    }
+
+    // 3. Khởi tạo đầy đủ thông tin
+    public SinhVien(String soBaoDanh, String hoTen, int namSinh,
+                    double diemToan, double diemVan, double diemNgoaiNgu) {
+        this.soBaoDanh = soBaoDanh;
+        this.hoTen = hoTen;
+        this.namSinh = namSinh;
+        this.diemToan = diemToan;
+        this.diemVan = diemVan;
+        this.diemNgoaiNgu = diemNgoaiNgu;
+    }
+
+    // ===== b) Property tính tổng điểm =====
+    public double getTongDiem() {
+        // Tổng điểm = Toán + Văn + Ngoại ngữ * 2
+        return diemToan + diemVan + (diemNgoaiNgu * 2);
+    }
+
+    // ===== c) Property kết quả =====
+    public String getKetQua() {
+        // Nếu tổng điểm >= điểm chuẩn => Đậu, ngược lại => Rớt
+        return getTongDiem() >= diemChuan ? "Dau" : "Rot";
+    }
+
+    // ===== d) Phương thức xuất thông tin thí sinh =====
+    public void xuat() {
+        System.out.println("=== Thong tin thi sinh ===");
+        System.out.println("So bao danh: " + soBaoDanh);
+        System.out.println("Ho ten: " + hoTen);
+        System.out.println("Nam sinh: " + namSinh);
+        System.out.println("Diem Toan: " + diemToan);
+        System.out.println("Diem Van: " + diemVan);
+        System.out.println("Diem Ngoai ngu: " + diemNgoaiNgu);
+        System.out.println("Tong diem: " + getTongDiem());
+        System.out.println("Ket qua: " + getKetQua());
+        System.out.println("===========================\n");
+    }
+
+    // Getter và Setter cho các thuộc tính
+    public String getSoBaoDanh() {
+        return soBaoDanh;
+    }
+
+    public void setSoBaoDanh(String soBaoDanh) {
+        this.soBaoDanh = soBaoDanh;
+    }
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public int getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(int namSinh) {
+        this.namSinh = namSinh;
+    }
+
+    public double getDiemToan() {
+        return diemToan;
+    }
+
+    public void setDiemToan(double diemToan) {
+        this.diemToan = diemToan;
+    }
+
+    public double getDiemVan() {
+        return diemVan;
+    }
+
+    public void setDiemVan(double diemVan) {
+        this.diemVan = diemVan;
+    }
+
+    public double getDiemNgoaiNgu() {
+        return diemNgoaiNgu;
+    }
+
+    public void setDiemNgoaiNgu(double diemNgoaiNgu) {
+        this.diemNgoaiNgu = diemNgoaiNgu;
+    }
+
+    // Getter và Setter cho diemChuan
+    public static void setDiemChuan(double diem) {
+        diemChuan = diem;
+    }
+
+    public static double getDiemChuan() {
+        return diemChuan;
+    }
+
+    // Phương thức main để kiểm thử
     public static void main(String[] args) {
-        System.out.println("=== Sinh vien mac dinh ===");
-        SinhVienABC sv1 = new SinhVienABC();
+        // Tạo 2 thí sinh để minh họa
+        SinhVien sv1 = new SinhVien("001", "Tran A", 2006, 8.5, 7.5, 9.0);
+        SinhVien sv2 = new SinhVien("002", "Nguyen B", 2006, 6.0, 7.0, 5.5);
+
+        // Xuất thông tin
         sv1.xuat();
-
-        System.out.println("\n=== Sinh vien co tham so ===");
-        SinhVienABC sv2 = new SinhVienABC("Tran Thi B", "05/09/2003", "nu", "SV005", "cao dang");
         sv2.xuat();
-
-        System.out.println("\n=== Nhap thong tin sinh vien ===");
-        SinhVienABC sv3 = new SinhVienABC();
-        sv3.nhap();
-        sv3.xuat();
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsgiaovien>
+    <giaovien>
+        <ten>Nguyen Van A</ten>
+        <sonhom>2</sonhom>
+    </giaovien>
+    <giaovien>
+        <ten>Tran Thi B</ten>
+        <sonhom>1</sonhom>
+    </giaovien>
+    <giaovien>
+        <ten>Le Van C</ten>
+        <sonhom>3</sonhom>
+    </giaovien>
+</dsgiaovien>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CongTyABC>
+    <NhanVien>
+        <MaNV>NV001</MaNV>
+        <TenNV>Nguyen Van A</TenNV>
+        <PhongBan>Tai vu</PhongBan>
+        <ChucVu>Lanh dao</ChucVu>
+        <HeSoLuong>5.0</HeSoLuong>
+        <SoNgayLam>25</SoNgayLam>
+    </NhanVien>
+    <NhanVien>
+        <MaNV>NV002</MaNV>
+        <TenNV>Tran Thi B</TenNV>
+        <PhongBan>Marketing</PhongBan>
+        <ChucVu>Nhan vien</ChucVu>
+        <HeSoLuong>3.5</HeSoLuong>
+        <SoNgayLam>22</SoNgayLam>
+    </NhanVien>
+    <NhanVien>
+        <MaNV>NV003</MaNV>
+        <TenNV>Le Van C</TenNV>
+        <PhongBan>Tai vu</PhongBan>
+        <ChucVu>Nhan vien</ChucVu>
+        <HeSoLuong>4.34</HeSoLuong>
+        <SoNgayLam>15</SoNgayLam>
+    </NhanVien>
+    <NhanVien>
+        <MaNV>NV004</MaNV>
+        <TenNV>Pham Thi D</TenNV>
+        <PhongBan>San xuat</PhongBan>
+        <ChucVu>Lanh dao</ChucVu>
+        <HeSoLuong>5.5</HeSoLuong>
+        <SoNgayLam>10</SoNgayLam>
+    </NhanVien>
+    <NhanVien>
+        <MaNV>NV005</MaNV>
+        <TenNV>Hoang Van E</TenNV>
+        <PhongBan>Tai vu</PhongBan>
+        <ChucVu>Nhan vien</ChucVu>
+        <HeSoLuong>3.0</HeSoLuong>
+        <SoNgayLam>30</SoNgayLam>
+    </NhanVien>
+    <NhanVien>
+        <MaNV>NV006</MaNV>
+        <TenNV>Nguyen Van F</TenNV>
+        <PhongBan>Marketing</PhongBan>
+        <ChucVu>Nhan vien</ChucVu>
+        <HeSoLuong>4.8</HeSoLuong>
+        <SoNgayLam>5</SoNgayLam>
+    </NhanVien>
+</CongTyABC>
